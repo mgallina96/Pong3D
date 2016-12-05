@@ -9,9 +9,9 @@ public class MainController implements MouseMotionListener
 {
 	private Game game;
 	
-	public MainController()
+	public MainController(Game _game)
 	{
-		
+		this.game=_game;
 	}
 	
 	/**

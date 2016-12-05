@@ -1,5 +1,7 @@
 package model;
 
+import java.awt.Dimension;
+
 import application.Settings;
 import javafx.geometry.Point3D;
 
@@ -21,7 +23,7 @@ public class Game
 	{
 		private Id id;
 		private int score;
-		private double[] dimension;
+		private Dimension dimension;
 		
 		public Player(Id _id)
 		{
@@ -62,14 +64,14 @@ public class Game
 		/**
 		 * @return the dimension
 		 */
-		public double[] getDimension() {
+		public Dimension getDimension() {
 			return dimension;
 		}
 
 		/**
 		 * @param dimension the dimension to set
 		 */
-		public void setDimension(double[] dimension) {
+		public void setDimension(Dimension dimension) {
 			this.dimension = dimension;
 		}
 	}

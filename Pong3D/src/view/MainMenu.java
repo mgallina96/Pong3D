@@ -17,7 +17,7 @@ import java.awt.Font;
 public class MainMenu extends JPanel {
 
 	/**
-	 * Create the panel.
+	 * Create the MainMenu panel.
 	 */
 	public MainMenu() {
 		setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
