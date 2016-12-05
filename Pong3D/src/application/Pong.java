@@ -1,9 +1,9 @@
 package application;
 
 /**
- * Pong 3D.
+ * Pong3D Project.
  * 
- * Classe Main.
+ * Main class.
  * 
  * @author Manuel Gallina
  * @author Giosuè Filippini
@@ -11,12 +11,12 @@ package application;
 public class Pong 
 {
 	/**
-	 * Metodo main.
+	 * Main method for the Pong3D project.
 	 * 
-	 * @param args Argomenti da console.
+	 * @param args The console parameters.
 	 */
 	public static void main(String[] args) 
 	{
-		
+		//TODO
 	}
 }

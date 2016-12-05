@@ -5,28 +5,31 @@ import java.awt.event.MouseMotionListener;
 
 import model.Game;
 
+/**
+ * Controller class for the main menu of the game.
+ * 
+ * @author Manuel Gallina
+ * @author Giosuè Filippini
+ */
 public class MainController implements MouseMotionListener
 {
 	private Game game;
 	
-	public MainController(Game _game)
+	/**
+	 * Default constructor
+	 * 
+	 * @param game The game played.
+	 */
+	public MainController(Game game)
 	{
-		this.game=_game;
-	}
-	
-	/**
-	 * @return the game
-	 */
-	public Game getGame() {
-		return game;
-	}
-
-	/**
-	 * @param game the game to set
-	 */
-	public void setGame(Game game) {
 		this.game = game;
 	}
+	
+	/** @return The game. */
+	public Game getGame() { return game; }
+
+	/** @param game The game to set. */
+	public void setGame(Game game) { this.game = game; }
 
 	@Override
 	public void mouseMoved(MouseEvent arg0) 
@@ -35,5 +38,5 @@ public class MainController implements MouseMotionListener
 	}
 
 	@Override
-	public void mouseDragged(MouseEvent arg0) {}
+	public void mouseDragged(MouseEvent arg0) { /* Unused. */ }
 }
