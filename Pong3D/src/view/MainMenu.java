@@ -15,9 +15,6 @@ import java.awt.Font;
 @SuppressWarnings("serial")
 public class MainMenu extends JPanel 
 {
-	// The main menu buttons font.
-	private static final Font BUTTON_FONT = new Font("Tahoma", Font.PLAIN, 35);
-	
 	// The main menu buttons dimension.
 	private static final Dimension BUTTON_DIMENSION = new Dimension(200, 50);
 	
@@ -28,22 +25,28 @@ public class MainMenu extends JPanel
 	{
 		setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
+		JPanel panel = new JPanel();
+		FlowLayout flowLayout = (FlowLayout) panel.getLayout();
+		flowLayout.setVgap(10);
+		panel.setPreferredSize(new Dimension(220, 200));
+		add(panel);
+		
 		JButton singlePlayer = new JButton("Single Player");
+		panel.add(singlePlayer);
 			singlePlayer.setPreferredSize(BUTTON_DIMENSION);
-			singlePlayer.setFont(BUTTON_FONT);
+			singlePlayer.setFont(new Font("Tahoma", Font.PLAIN, 29));
 			singlePlayer.setAlignmentX(0.5f);
-			add(singlePlayer);
 			
 		JButton multiplayer = new JButton("Multiplayer");
+		panel.add(multiplayer);
 			multiplayer.setPreferredSize(BUTTON_DIMENSION);
-			multiplayer.setFont(BUTTON_FONT);
+			multiplayer.setFont(new Font("Tahoma", Font.PLAIN, 29));
 			multiplayer.setAlignmentX(0.5f);
-			add(multiplayer);
 			
 		JButton quit = new JButton("Quit");
+		panel.add(quit);
 			quit.setPreferredSize(BUTTON_DIMENSION);
-			quit.setFont(BUTTON_FONT);
+			quit.setFont(new Font("Tahoma", Font.PLAIN, 29));
 			quit.setAlignmentX(0.5f);
-			add(quit);
 	}
 }
