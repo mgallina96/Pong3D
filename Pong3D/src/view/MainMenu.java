@@ -1,6 +1,10 @@
 package view;
 
 import javax.swing.JPanel;
+
+import control.MenuController;
+import control.MenuController.BtnType;
+
 import java.awt.FlowLayout;
 import javax.swing.JButton;
 import java.awt.Dimension;
@@ -18,6 +22,10 @@ public class MainMenu extends JPanel
 	// The main menu buttons dimension.
 	private static final Dimension BUTTON_DIMENSION = new Dimension(200, 50);
 	
+	JButton singlePlayer;
+	JButton multiplayer;
+	JButton quit;
+	
 	/**
 	 * Constructor.
 	 */
@@ -31,22 +39,42 @@ public class MainMenu extends JPanel
 		panel.setPreferredSize(new Dimension(220, 200));
 		add(panel);
 		
-		JButton singlePlayer = new JButton("Single Player");
+		singlePlayer = new JButton("Single Player");
 		panel.add(singlePlayer);
 			singlePlayer.setPreferredSize(BUTTON_DIMENSION);
 			singlePlayer.setFont(new Font("Tahoma", Font.PLAIN, 29));
 			singlePlayer.setAlignmentX(0.5f);
 			
-		JButton multiplayer = new JButton("Multiplayer");
+		multiplayer = new JButton("Multiplayer");
 		panel.add(multiplayer);
 			multiplayer.setPreferredSize(BUTTON_DIMENSION);
 			multiplayer.setFont(new Font("Tahoma", Font.PLAIN, 29));
 			multiplayer.setAlignmentX(0.5f);
 			
-		JButton quit = new JButton("Quit");
+		quit = new JButton("Quit");
 		panel.add(quit);
 			quit.setPreferredSize(BUTTON_DIMENSION);
 			quit.setFont(new Font("Tahoma", Font.PLAIN, 29));
 			quit.setAlignmentX(0.5f);
+		
+		
+		addActionListener();
+			
+	
 	}
+	
+	/**
+	 * Method that add ActionListener to the buttons
+	 * 
+	 */
+	public void addActionListener()
+	{
+		singlePlayer.addActionListener(new MenuController(BtnType.SINGLE_PLAYER));
+		multiplayer.addActionListener(new MenuController(BtnType.MULTIPLAYER));
+		quit.addActionListener(new MenuController(BtnType.QUIT));
+	}
+	
+	
+	
+	
 }
