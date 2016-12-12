@@ -2,6 +2,9 @@ package control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import application.MainForm;
+import view.GamePanel;
 /**
  * Controller class for the MainMenu 
  * 
@@ -27,6 +30,8 @@ public class MenuController implements ActionListener {
 		
 		if(btnType == BtnType.SINGLE_PLAYER) {
 			//modalità single player
+			MainForm.setFrame(new GamePanel().getFxPanel());
+			
 		}
 		
 		if(btnType == BtnType.MULTIPLAYER) {

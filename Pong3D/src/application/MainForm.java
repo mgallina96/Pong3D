@@ -5,10 +5,11 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import view.MainMenu;
 import java.awt.BorderLayout;
+import java.awt.Container;
 
 public class MainForm {
 
-	private JFrame frame;
+	private static JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -43,6 +44,13 @@ public class MainForm {
 		
 		MainMenu mainMenu = new MainMenu();
 		frame.getContentPane().add(mainMenu, BorderLayout.CENTER);
+		
+	
+	}
+	
+	static public void setFrame(Container container ) 
+	{
+		frame.setContentPane(container);
 	}
 
 }
