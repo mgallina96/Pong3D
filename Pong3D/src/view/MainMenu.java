@@ -2,8 +2,8 @@ package view;
 
 import javax.swing.JPanel;
 
-import control.MenuController;
-import control.MenuController.BtnType;
+import control.ButtonController;
+import control.ButtonController.BtnType;
 
 import java.awt.FlowLayout;
 import javax.swing.JButton;
@@ -34,9 +34,11 @@ public class MainMenu extends JPanel
 		setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		JPanel panel = new JPanel();
+			panel.setPreferredSize(new Dimension(220, 200));
+		
 		FlowLayout flowLayout = (FlowLayout) panel.getLayout();
-		flowLayout.setVgap(10);
-		panel.setPreferredSize(new Dimension(220, 200));
+			flowLayout.setVgap(10);
+		
 		add(panel);
 		
 		singlePlayer = new JButton("Single Player");
@@ -57,24 +59,16 @@ public class MainMenu extends JPanel
 			quit.setFont(new Font("Tahoma", Font.PLAIN, 29));
 			quit.setAlignmentX(0.5f);
 		
-		
 		addActionListener();
-			
-	
 	}
 	
 	/**
-	 * Method that add ActionListener to the buttons
-	 * 
+	 * Method that adds ActionListener to the buttons.
 	 */
 	public void addActionListener()
 	{
-		singlePlayer.addActionListener(new MenuController(BtnType.SINGLE_PLAYER));
-		multiplayer.addActionListener(new MenuController(BtnType.MULTIPLAYER));
-		quit.addActionListener(new MenuController(BtnType.QUIT));
+		singlePlayer.addActionListener(new ButtonController(BtnType.SINGLE_PLAYER));
+		multiplayer.addActionListener(new ButtonController(BtnType.MULTIPLAYER));
+		quit.addActionListener(new ButtonController(BtnType.QUIT));
 	}
-	
-	
-	
-	
 }

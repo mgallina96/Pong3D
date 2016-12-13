@@ -1,6 +1,7 @@
-package model;
+package model.objects;
 
 import javafx.geometry.Point3D;
+import view.graphichandler.graphicobject.Object3D;
 
 /**
  * Basic game element with a position in 3D space.
@@ -11,15 +12,19 @@ import javafx.geometry.Point3D;
 public class GameElement 
 {
 	private Point3D position;
+	private Object3D parent;
 
 	/**
-	 * Default constructor.
+	 * Constructor for 3D elements.
 	 * 
 	 * @param position The position of the element.
 	 */
 	public GameElement(Point3D position)
 	{
 		this.position = position;
+		
+		parent = new Object3D();
+		parent.setPosition(position.getX(), position.getY(), position.getZ());
 	}
 	
 	/**
@@ -39,4 +44,10 @@ public class GameElement
 
 	/** @param position The position to set. */
 	public void setPosition(Point3D position) {	this.position = position; }
+	
+	/** @return The parent Transform. */
+	public Object3D getParent() { return parent; }
+
+	/** @param parent The parent Transform to set. */
+	public void setParent(Object3D parent) { this.parent = parent; }
 }

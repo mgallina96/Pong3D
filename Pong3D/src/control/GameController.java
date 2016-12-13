@@ -2,27 +2,32 @@ package control;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
+import java.util.List;
 
 import model.Game;
+import model.objects.GameElement;
+import view.GamePanel;
 
 /**
- * Controller class for the main menu of the game.
+ * Controller class for the game panel.
  * 
  * @author Manuel Gallina
  * @author Giosuè Filippini
  */
-public class MainController implements MouseMotionListener
+public class GameController implements MouseMotionListener
 {
 	private Game game;
+	private GamePanel panel;
 	
 	/**
 	 * Default constructor
 	 * 
 	 * @param game The game played.
 	 */
-	public MainController(Game game)
+	public GameController(List<GameElement> players)
 	{
-		this.game = game;
+		this.game = new Game(players);
+		this.panel = new GamePanel(players);
 	}
 	
 	/** @return The game. */
@@ -36,7 +41,7 @@ public class MainController implements MouseMotionListener
 	{
 		game.update();
 	}
-
+	
 	@Override
 	public void mouseDragged(MouseEvent arg0) { /* Unused. */ }
 }

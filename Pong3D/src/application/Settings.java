@@ -27,12 +27,6 @@ public class Settings
 	/** The dimensions of the player. The player is made of an image on the plane, so only width and height are needed. */
 	public static final Dimension PLAYER_DIMENSION = null;
 	
-	/** The starting position of the ball. In this case it's the center of the field. */
-	public static final Point3D BALL_START_POS = null;
-	
-	/** The radius of the ball. */
-	public static final double BALL_RADIUS = 0;
-	
 	/** The dimensions of the field, expressed as [x, y, z] array of coordinates. */
 	public static final Dimension FIELD_SIZE = null;
 	

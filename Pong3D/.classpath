@@ -8,5 +8,6 @@
 		</accessrules>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Manuel Gallina/git/Pong3D/Pong3D/external_libraries/jimObjModelImporterJFX.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

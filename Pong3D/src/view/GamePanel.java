@@ -1,60 +1,49 @@
 package view;
 
-
+import java.util.List;
 
 import javax.swing.JPanel;
+
+import application.Main;
 import javafx.embed.swing.*;
 import javafx.scene.Group;
-import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Box;
-import javafx.scene.shape.Sphere;
-import javafx.scene.transform.Translate;
+import model.objects.Ball;
+import model.objects.Field;
+import model.objects.GameElement;
+import view.graphichandler.View;
 
-public class GamePanel extends JPanel {
-
+@SuppressWarnings("serial")
+public class GamePanel extends JPanel 
+{
 	private JFXPanel fxPanel = new JFXPanel();
-	private PerspectiveCamera camera = new PerspectiveCamera();
 	private Group root = new Group();
-	//private Object3D field = new Object3D(); //classe da creare
-	private Translate pivot = new Translate(0, 0, 0);
+	private View view = new View(root);
+	private Scene scene = new Scene(root, 1024, 768, true);
+	
+	private List<GameElement> players;
+	private Ball ball = new Ball();
 	
 	/**
 	 * Create the panel.
 	 */
-	public GamePanel() 
+	public GamePanel(List<GameElement> players) 
 	{
-		Scene scene = createScene();
+		createScene();
 		fxPanel.setScene(scene);
+		Main.setFrame(this.fxPanel);
 	}
 	
-	private Scene createScene() {
-		Scene scene =  new Scene(root, 1024, 768, true);
+	private void createScene() 
+	{
 		scene.setFill(Color.CORAL);
-		
-		buildCamera();
-		scene.setCamera(camera);
-		
-		
-		//root.getChildren().add();
-		
-		
-		
-		
-		return scene;
+		scene.setCamera(view.getCamera());
+		root.getChildren().add(new Field().getParent());
 	}
 	
 	public JFXPanel getFxPanel()
 	{
 		return fxPanel;
 	}
-	
-	private void buildCamera() 
-	{
-		root.getChildren().add(camera);
-	}
-	
-	
-
 }
