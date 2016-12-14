@@ -1,8 +1,8 @@
-package view.graphichandler;
+package controller.graphichandler;
 
 import javafx.scene.Group;
 import javafx.scene.PerspectiveCamera;
-import view.graphichandler.graphicobject.Object3D;
+import utility.graphics.graphicobject.Object3D;
 
 /**
  * This class represents a {@link javafx.scene.PerspectiveCamera perspective camera} in the 3D space.
@@ -39,7 +39,7 @@ public class View
 	private Object3D pivot2 = new Object3D();
 	 
 	/**
-	 * The constructor.
+	 * Default constructor.
 	 * 
 	 * @param parent The parent group.
 	 */
@@ -55,35 +55,14 @@ public class View
         camera.setFarClip(CAMERA_FAR_CLIP);
     }
 	
-	/**
-	 * Returns the translation pivot of the camera.
-	 * 
-	 * @return The translation pivot of the camera.
-	 */
-	public Object3D getPivot()
-	{
-		return this.pivot;
-	}
+	/** @return The translation pivot of the camera. */
+	public Object3D getPivot() { return this.pivot;	}
 	
-	/**
-	 * Returns the rotation pivot.
-	 * 
-	 * @return The rotation pivot of the camera.
-	 */
-	public Object3D getPivot2()
-	{
-		return this.pivot2;
-	}
+	/** @return The rotation pivot of the camera. */
+	public Object3D getPivot2() { return this.pivot2; }
 	
-    /**
-     * Returns the camera.
-     * 
-     * @return The perspective camera.
-     */
-	public PerspectiveCamera getCamera()
-	{
-		return camera;
-	}
+    /** @return The perspective camera. */
+	public PerspectiveCamera getCamera() { return camera; }
 
 	/**
 	 * Resets the camera to the initial values.

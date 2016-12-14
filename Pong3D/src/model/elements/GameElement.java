@@ -1,7 +1,7 @@
-package model.objects;
+package model.elements;
 
 import javafx.geometry.Point3D;
-import view.graphichandler.graphicobject.Object3D;
+import utility.graphics.graphicobject.Object3D;
 
 /**
  * Basic game element with a position in 3D space.

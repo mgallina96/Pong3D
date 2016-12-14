@@ -1,4 +1,4 @@
-package view.graphichandler.graphicobject;
+package utility.graphics.graphicobject;
 
 import java.net.URL;
 
@@ -17,14 +17,10 @@ import javafx.scene.transform.Translate;
  */
 public class Object3D extends Group implements Transform, ObjImporter 
 {
-	/**
-	 * The obj mesh importer.	
-	 */
+	/** The obj mesh importer. */
 	public static final ObjModelImporter OBJ_IMPORTER = new ObjModelImporter();	
 	
-	/**
-	 * Conversion factor: radiant into degrees.
-	 */
+	/** Conversion factor: radiant into degrees. */
 	public static final double RAD_TO_DEG = 180.0 / Math.PI;
 	
 	private Translate position  = new Translate(0,0,0); 
@@ -41,35 +37,14 @@ public class Object3D extends Group implements Transform, ObjImporter
         reset();
     }
     
-    /**
-     * Returns the Translate object for the position.
-     * 
-     * @return The Translate object for the position.
-     */
-    public Translate getPosition()
-    {
-    	return this.position;
-    }
+    /** @return The Translate object for the position. */
+    public Translate getPosition() { return this.position; }
     
-    /**
-     * Returns the Rotation object for the rotation.
-     * 
-     * @return The Rotation object for the rotation.
-     */
-    public Rotation getRotation()
-    {
-    	return this.rotation;
-    }
+    /** @return The Rotation object for the rotation. */
+    public Rotation getRotation() {	return this.rotation; }
     
-    /**
-     * Returns the Scale object for the scale.
-     * 
-     * @return The Scale object for the scale.
-     */
-    public Scale getScale()
-    {
-    	return this.scale;
-    }
+    /** @return The Scale object for the scale. */
+    public Scale getScale() { return this.scale; }
     
     /**
      * Sets the translation from the three axis.

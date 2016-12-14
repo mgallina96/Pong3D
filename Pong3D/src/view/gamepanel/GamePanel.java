@@ -1,4 +1,4 @@
-package view;
+package view.gamepanel;
 
 import java.util.List;
 
@@ -7,10 +7,9 @@ import javafx.embed.swing.*;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
-import model.objects.Ball;
-import model.objects.Field;
-import model.objects.GameElement;
-import view.graphichandler.View;
+import model.elements.gameelements.*;
+import model.elements.GameElement;
+import controller.graphichandler.View;
 
 public class GamePanel
 {
@@ -29,7 +28,7 @@ public class GamePanel
 	public GamePanel(List<GameElement> players, Field field, Ball ball) 
 	{
 		fxPanel.setScene(scene);
-		Main.setFrame(this.fxPanel);
+//		Main.setFrame(this.fxPanel);
 		
 		this.field = field;
 		this.ball = ball;

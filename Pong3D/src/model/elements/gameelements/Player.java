@@ -1,12 +1,10 @@
-package model.objects;
+package model.elements.gameelements;
 
-import java.awt.Dimension;
-
-import application.Settings;
 import javafx.geometry.Point3D;
 import javafx.scene.shape.Box;
 import javafx.scene.shape.Shape3D;
-import model.objects.GameElement;
+import model.elements.GameElement;
+import utility.geometry.geometry3d.*;
 
 /**
  * Class that represents the player object in the game.
@@ -18,6 +16,21 @@ import model.objects.GameElement;
  */
 public class Player extends GameElement
 {
+	/** The starting position of the Player_1 object. */
+	public static final Point3D P1_START_POS = null;
+	
+	/** The starting position of the Player_2 object. */
+	public static final Point3D P2_START_POS = null;
+	
+	/** The starting position of the CPU object. */
+	public static final Point3D CPU_START_POS = null;
+	
+	/** The default starting score of all the players. */
+	public static final int START_SCORE = 0;
+	
+	/** The dimensions of the player. */
+	public static final Dimension3D PLAYER_DIMENSION = new Dimension3D(100.0, 100.0, 100.0);;
+	
 	/**
 	 * The possible player ids.
 	 * 
@@ -28,7 +41,7 @@ public class Player extends GameElement
 	 */
 	public enum Id 
 	{
-		P1(Settings.P1_START_POS), P2(Settings.P2_START_POS), CPU(Settings.CPU_START_POS);
+		P1(P1_START_POS), P2(P2_START_POS), CPU(CPU_START_POS);
 		
 		private Point3D position;
 		
@@ -40,8 +53,7 @@ public class Player extends GameElement
 	
 	private Id id;
 	private int score;
-	private Dimension dimension; //TODO
-	private Shape3D shape = new Box(100, 100, 10);
+	private Shape3D shape;
 	
 	/**
 	 * Default constructor.
@@ -52,11 +64,11 @@ public class Player extends GameElement
 	{
 		super(id.position);
 		
-		getParent().getChildren().add(shape);
-		
 		this.setId(id);
-		this.score = Settings.START_SCORE;
-		this.dimension = Settings.PLAYER_DIMENSION;
+		this.score = START_SCORE;
+		this.shape = new Box(PLAYER_DIMENSION.getWidth(), PLAYER_DIMENSION.getHeight(), PLAYER_DIMENSION.getDepth());
+		
+		getParent().getChildren().add(shape);
 	}
 
 	/** @return The player Id. */
@@ -70,10 +82,4 @@ public class Player extends GameElement
 
 	/** @param score The score to set. */
 	public void setScore(int score) { this.score = score; }
-
-	/** @return The dimension. */
-	public Dimension getDimension() { return dimension; }
-
-	/** @param dimension The dimension to set. */
-	public void setDimension(Dimension dimension) { this.dimension = dimension;	}
 }

@@ -1,4 +1,4 @@
-package view.graphichandler.graphicobject;
+package utility.graphics.graphicobject;
 
 import java.net.URL;
 

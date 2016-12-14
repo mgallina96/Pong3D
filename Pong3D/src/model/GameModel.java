@@ -2,9 +2,8 @@ package model;
 
 import java.util.List;
 
-import model.objects.Ball;
-import model.objects.Field;
-import model.objects.GameElement;
+import model.elements.gameelements.*;
+import model.elements.*;
 
 /**
  * This class is the model core of the game.
@@ -14,7 +13,7 @@ import model.objects.GameElement;
  * @author Manuel Gallina
  * @author Giosuè Filippini
  */
-public class Game 
+public class GameModel 
 {
 	private List<GameElement> players;
 	private Ball ball;
@@ -25,11 +24,11 @@ public class Game
 	 * 
 	 * @param players The players of the game.
 	 */
-	public Game(List<GameElement> players, Field field, Ball ball)
+	public GameModel(List<GameElement> players, Field field, Ball ball)
 	{
 		this.setPlayers(players);
 		
-		this.field = field;
+		this.setField(field);
 		this.ball = ball;
 	}
 
@@ -44,6 +43,12 @@ public class Game
 
 	/** @param ball The ball to set. */
 	public void setBall(Ball ball) { this.ball = ball; }
+
+	/** @return The field. */
+	public Field getField() { return field;	}
+
+	/** @param field The field to set. */
+	public void setField(Field field) {	this.field = field;	}
 
 	/**
 	 * This method updates the state of all the objects in this game.

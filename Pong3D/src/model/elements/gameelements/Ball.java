@@ -1,9 +1,9 @@
-package model.objects;
+package model.elements.gameelements;
 
 import javafx.geometry.Point3D;
 import javafx.scene.shape.Shape3D;
 import javafx.scene.shape.Sphere;
-import model.objects.GameElement;
+import model.elements.GameElement;
 		
 /**
  * Class that represents the ball in the game.
@@ -36,8 +36,9 @@ public class Ball extends GameElement
 	{
 		super(START_POS);
 		
-		getParent().getChildren().add(SHAPE);
 		this.setSpeed(BALL_SPEED);
+		
+		getParent().getChildren().add(SHAPE);
 	}
 
 	/** @return The radius of the ball. */

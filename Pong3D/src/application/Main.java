@@ -1,13 +1,13 @@
 package application;
 
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.EventQueue;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-import javax.swing.JFrame;
+import utility.graphics.GenericFXPanel;
 
-import view.MainMenu;
-import java.awt.FlowLayout;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Pong3D Project.
@@ -17,10 +17,35 @@ import java.awt.FlowLayout;
  * @author Manuel Gallina
  * @author Giosuè Filippini
  */
-public class Main 
+public class Main extends Application
 {
-	private static Dimension frameRes = new Dimension(1600, 900);
-	private static JFrame frame;
+	/** The logger of the application. */
+	public static final Logger LOG = Logger.getLogger(Main.class.getName());
+	
+	private static Scene START_SCENE;
+	private static Stage STAGE;
+	
+	@Override
+	public void start(Stage primaryStage) 
+	{		
+		LOG.setLevel(Level.ALL);
+		
+		try 
+		{
+			START_SCENE = new Scene(new GenericFXPanel("/view/startpanel/StartPanel.fxml").getRoot(), 
+					Settings.FRAME_RESOLUTION.getWidth(), 
+					Settings.FRAME_RESOLUTION.getHeight()); 
+		
+			STAGE = primaryStage;
+			
+			primaryStage.setScene(START_SCENE);
+			primaryStage.show();
+		} 
+		catch(Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
 	
 	/**
 	 * Main method for the Pong3D project.
@@ -29,41 +54,19 @@ public class Main
 	 */
 	public static void main(String[] args) 
 	{
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					initialize();
-					Main.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/* Initialize the contents of the frame. */
-	private static void initialize() 
-	{
-		frame = new JFrame();
-		frame.setBounds(100, 100, Main.frameRes.width, Main.frameRes.height);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-		
-		MainMenu paintArea = new MainMenu();
-			paintArea.setBounds(0, 246, 697, 329);
-			paintArea.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		
-		frame.getContentPane().add(paintArea);
-	}
-
-	/**
-	 * Sets the panel to show in the frame.
-	 * 
-	 * @param pane The panel to set.
-	 */
-	public static void setFrame(Container pane)
-	{
-		frame.setContentPane(pane);
+		launch(args);
 	}
 	
+	/** @return The scene */
+	public static Scene getStartScene() { return START_SCENE; }
+
+	/** @param startScene The scene to set. */
+	public static void setStartScene(Scene startScene) 
+	{ 
+		START_SCENE = startScene;
+		STAGE.setScene(START_SCENE);	
+	}
+
+	/** @return The stage. */
+	public static Stage getStage() { return STAGE; }
 }

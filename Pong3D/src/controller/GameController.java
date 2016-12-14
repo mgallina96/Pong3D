@@ -1,14 +1,14 @@
-package control;
+package controller;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 import java.util.List;
 
-import model.Game;
-import model.objects.Ball;
-import model.objects.Field;
-import model.objects.GameElement;
-import view.GamePanel;
+import model.GameModel;
+import model.elements.gameelements.Ball;
+import model.elements.gameelements.Field;
+import model.elements.GameElement;
+import view.gamepanel.GamePanel;
 
 /**
  * Controller class for the game panel.
@@ -18,7 +18,7 @@ import view.GamePanel;
  */
 public class GameController implements MouseMotionListener
 {
-	private Game game;
+	private GameModel game;
 	private GamePanel panel;
 	
 	private List<GameElement> players;
@@ -32,15 +32,15 @@ public class GameController implements MouseMotionListener
 	 */
 	public GameController(List<GameElement> players)
 	{
-		this.game = new Game(players, field, ball);
-		this.panel = new GamePanel(players, field, ball);
+		this.game = new GameModel(players, field, ball);
+//		this.panel = new GamePanel(players, field, ball);
 	}
 	
 	/** @return The game. */
-	public Game getGame() { return game; }
+	public GameModel getGame() { return game; }
 
 	/** @param game The game to set. */
-	public void setGame(Game game) { this.game = game; }
+	public void setGame(GameModel game) { this.game = game; }
 
 	@Override
 	public void mouseMoved(MouseEvent arg0) 
