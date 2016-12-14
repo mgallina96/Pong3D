@@ -5,6 +5,8 @@ import java.awt.event.MouseMotionListener;
 import java.util.List;
 
 import model.Game;
+import model.objects.Ball;
+import model.objects.Field;
 import model.objects.GameElement;
 import view.GamePanel;
 
@@ -19,6 +21,10 @@ public class GameController implements MouseMotionListener
 	private Game game;
 	private GamePanel panel;
 	
+	private List<GameElement> players;
+	private Ball ball = new Ball();
+	private Field field = new Field();
+		
 	/**
 	 * Default constructor
 	 * 
@@ -26,8 +32,8 @@ public class GameController implements MouseMotionListener
 	 */
 	public GameController(List<GameElement> players)
 	{
-		this.game = new Game(players);
-		this.panel = new GamePanel(players);
+		this.game = new Game(players, field, ball);
+		this.panel = new GamePanel(players, field, ball);
 	}
 	
 	/** @return The game. */

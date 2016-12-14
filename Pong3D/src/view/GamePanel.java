@@ -2,8 +2,6 @@ package view;
 
 import java.util.List;
 
-import javax.swing.JPanel;
-
 import application.Main;
 import javafx.embed.swing.*;
 import javafx.scene.Group;
@@ -14,8 +12,7 @@ import model.objects.Field;
 import model.objects.GameElement;
 import view.graphichandler.View;
 
-@SuppressWarnings("serial")
-public class GamePanel extends JPanel 
+public class GamePanel
 {
 	private JFXPanel fxPanel = new JFXPanel();
 	private Group root = new Group();
@@ -23,23 +20,28 @@ public class GamePanel extends JPanel
 	private Scene scene = new Scene(root, 1024, 768, true);
 	
 	private List<GameElement> players;
-	private Ball ball = new Ball();
+	private Ball ball;
+	private Field field;
 	
 	/**
 	 * Create the panel.
 	 */
-	public GamePanel(List<GameElement> players) 
+	public GamePanel(List<GameElement> players, Field field, Ball ball) 
 	{
-		createScene();
 		fxPanel.setScene(scene);
 		Main.setFrame(this.fxPanel);
+		
+		this.field = field;
+		this.ball = ball;
+		
+		createScene();
 	}
 	
 	private void createScene() 
 	{
 		scene.setFill(Color.CORAL);
 		scene.setCamera(view.getCamera());
-		root.getChildren().add(new Field().getParent());
+		root.getChildren().add(field.getParent());
 	}
 	
 	public JFXPanel getFxPanel()

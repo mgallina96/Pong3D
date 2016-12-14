@@ -2,8 +2,8 @@ package view;
 
 import javax.swing.JPanel;
 
-import control.ButtonController;
-import control.ButtonController.BtnType;
+import control.MenuController;
+import control.MenuController.BtnType;
 
 import java.awt.FlowLayout;
 import javax.swing.JButton;
@@ -67,8 +67,8 @@ public class MainMenu extends JPanel
 	 */
 	public void addActionListener()
 	{
-		singlePlayer.addActionListener(new ButtonController(BtnType.SINGLE_PLAYER));
-		multiplayer.addActionListener(new ButtonController(BtnType.MULTIPLAYER));
-		quit.addActionListener(new ButtonController(BtnType.QUIT));
+		singlePlayer.addActionListener(new MenuController(BtnType.SINGLE_PLAYER));
+		multiplayer.addActionListener(new MenuController(BtnType.MULTIPLAYER));
+		quit.addActionListener(new MenuController(BtnType.QUIT));
 	}
 }

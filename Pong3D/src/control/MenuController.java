@@ -13,13 +13,15 @@ import model.objects.GameElement;
  * @author Giosuè Filippini
  *
  */
-public class ButtonController implements ActionListener 
+public class MenuController implements ActionListener 
 {	
+	
+	
 	public enum BtnType { SINGLE_PLAYER, MULTIPLAYER, QUIT };
 	
 	private BtnType btnType;
 	
-	public ButtonController(BtnType btnType) 
+	public MenuController(BtnType btnType) 
 	{
 		this.btnType = btnType;
 		

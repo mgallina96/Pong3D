@@ -3,6 +3,7 @@ package model;
 import java.util.List;
 
 import model.objects.Ball;
+import model.objects.Field;
 import model.objects.GameElement;
 
 /**
@@ -17,16 +18,19 @@ public class Game
 {
 	private List<GameElement> players;
 	private Ball ball;
-	
+	private Field field;
+		
 	/**
 	 * Default constructor.
 	 * 
 	 * @param players The players of the game.
 	 */
-	public Game(List<GameElement> players)
+	public Game(List<GameElement> players, Field field, Ball ball)
 	{
 		this.setPlayers(players);
-		this.setBall(new Ball());
+		
+		this.field = field;
+		this.ball = ball;
 	}
 
 	/** @return The players. */
