@@ -33,7 +33,7 @@ public class GameController implements MouseMotionListener
 	public GameController(List<GameElement> players)
 	{
 		this.game = new GameModel(players, field, ball);
-//		this.panel = new GamePanel(players, field, ball);
+		this.panel = new GamePanel(players, field, ball);
 	}
 	
 	/** @return The game. */
@@ -42,6 +42,11 @@ public class GameController implements MouseMotionListener
 	/** @param game The game to set. */
 	public void setGame(GameModel game) { this.game = game; }
 
+	public GamePanel getPanel()
+	{
+		return this.panel;
+	}
+	
 	@Override
 	public void mouseMoved(MouseEvent arg0) 
 	{

@@ -3,6 +3,7 @@ package view.gamepanel;
 import java.util.List;
 
 import application.Main;
+import application.Settings;
 import javafx.embed.swing.*;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -13,10 +14,9 @@ import controller.graphichandler.View;
 
 public class GamePanel
 {
-	private JFXPanel fxPanel = new JFXPanel();
 	private Group root = new Group();
 	private View view = new View(root);
-	private Scene scene = new Scene(root, 1024, 768, true);
+	private Scene scene = new Scene(root, Settings.FRAME_RESOLUTION.getWidth(), Settings.FRAME_RESOLUTION.getHeight(), true);
 	
 	private List<GameElement> players;
 	private Ball ball;
@@ -27,7 +27,7 @@ public class GamePanel
 	 */
 	public GamePanel(List<GameElement> players, Field field, Ball ball) 
 	{
-		fxPanel.setScene(scene);
+
 //		Main.setFrame(this.fxPanel);
 		
 		this.field = field;
@@ -41,10 +41,13 @@ public class GamePanel
 		scene.setFill(Color.CORAL);
 		scene.setCamera(view.getCamera());
 		root.getChildren().add(field.getParent());
+		root.getChildren().add(ball.getParent());
 	}
 	
-	public JFXPanel getFxPanel()
+	public Scene getScene() 
 	{
-		return fxPanel;
+		return this.scene;
 	}
+	
+
 }

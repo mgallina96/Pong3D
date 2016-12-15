@@ -45,7 +45,7 @@ public class View
 	 */
 	public View(Group parent) 
 	{
-		resetCamera();
+		  
         
         parent.getChildren().add(pivot);
         pivot.getChildren().add(pivot2);
@@ -53,6 +53,8 @@ public class View
 
         camera.setNearClip(CAMERA_NEAR_CLIP);
         camera.setFarClip(CAMERA_FAR_CLIP);
+        
+        resetCamera();
     }
 	
 	/** @return The translation pivot of the camera. */
@@ -77,9 +79,11 @@ public class View
         pivot2.getRotation().setX(CAMERA_INITIAL_X_ANGLE);
         pivot2.getRotation().setZ(CAMERA_INITIAL_Z_ANGLE);
         
-        pivot2.getPosition().setY(-CAMERA_INITIAL_DISTANCE);
+        pivot2.getPosition().setY(0.0);
        
-        pivot.getPosition().setY(CAMERA_INITIAL_DISTANCE);
+        pivot.getPosition().setX(0.0);
+        pivot.getPosition().setY(0.0);
+        pivot.getPosition().setZ(-2000.0);
 	}
 	
 	/**

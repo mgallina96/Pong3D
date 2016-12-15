@@ -10,10 +10,12 @@
    <children>
       <BorderPane prefHeight="768.0" prefWidth="1280.0" stylesheets="@startPanel.css">
          <center>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="100.0" stylesheets="@startPanel.css" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" stylesheets="@startPanel.css" BorderPane.alignment="CENTER">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="112.0" text="PONG" />
-                  <Button fx:id="singlePlayer" mnemonicParsing="false" prefHeight="31.0" prefWidth="130.0" text="Start" />
+                  <Button fx:id="singlePlayer" mnemonicParsing="false" prefHeight="31.0" prefWidth="130.0" text="Single Player" />
+                  <Button fx:id="multiplayer" mnemonicParsing="false" prefHeight="31.0" prefWidth="130.0" text="Multiplayer" />
+                  <Button fx:id="quit" mnemonicParsing="false" prefHeight="31.0" prefWidth="130.0" text="Quit" />
                </children>
             </VBox>
          </center>

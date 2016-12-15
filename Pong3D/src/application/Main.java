@@ -35,6 +35,8 @@ public class Main extends Application
 			START_SCENE = new Scene(new GenericFXPanel("/view/startpanel/StartPanel.fxml").getRoot(), 
 					Settings.FRAME_RESOLUTION.getWidth(), 
 					Settings.FRAME_RESOLUTION.getHeight()); 
+			
+			LOG.log(Level.INFO, "Start Scene");
 		
 			STAGE = primaryStage;
 			
