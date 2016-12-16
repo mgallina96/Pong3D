@@ -19,7 +19,7 @@ public class Ball extends GameElement
 	private static final Point3D START_POS = new Point3D(0,0,0);
 	
 	/* The radius of the ball. */
-	private static final double BALL_RADIUS = 100;
+	private static final double BALL_RADIUS = 30;
 	
 	/* The speed of the ball, expressed as a 3D vector in the [x, y, z] form. */
 	private static final double[] BALL_SPEED = null;	

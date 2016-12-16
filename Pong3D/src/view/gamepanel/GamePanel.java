@@ -28,7 +28,7 @@ public class GamePanel
 	public GamePanel(List<GameElement> players, Field field, Ball ball) 
 	{
 
-//		Main.setFrame(this.fxPanel);
+		this.players = players;
 		
 		this.field = field;
 		this.ball = ball;
@@ -42,6 +42,11 @@ public class GamePanel
 		scene.setCamera(view.getCamera());
 		root.getChildren().add(field.getParent());
 		root.getChildren().add(ball.getParent());
+		
+		for(GameElement e : players)
+		{
+			root.getChildren().add(e.getParent());
+		}
 	}
 	
 	public Scene getScene() 

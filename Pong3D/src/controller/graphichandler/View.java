@@ -45,7 +45,7 @@ public class View
 	 */
 	public View(Group parent) 
 	{
-		  
+		camera.setFieldOfView(50.0);
         
         parent.getChildren().add(pivot);
         pivot.getChildren().add(pivot2);
@@ -83,7 +83,7 @@ public class View
        
         pivot.getPosition().setX(0.0);
         pivot.getPosition().setY(0.0);
-        pivot.getPosition().setZ(-2000.0);
+        pivot.getPosition().setZ(-935.0);
 	}
 	
 	/**

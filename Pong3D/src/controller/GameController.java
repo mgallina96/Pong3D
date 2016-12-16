@@ -7,6 +7,7 @@ import java.util.List;
 import model.GameModel;
 import model.elements.gameelements.Ball;
 import model.elements.gameelements.Field;
+import model.elements.gameelements.Player;
 import model.elements.GameElement;
 import view.gamepanel.GamePanel;
 
@@ -32,6 +33,9 @@ public class GameController implements MouseMotionListener
 	 */
 	public GameController(List<GameElement> players)
 	{
+		players.add(new Player(Player.Id.P1));
+		players.add(new Player(Player.Id.P2));
+		
 		this.game = new GameModel(players, field, ball);
 		this.panel = new GamePanel(players, field, ball);
 	}

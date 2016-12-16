@@ -1,7 +1,10 @@
 package model.elements.gameelements;
 
 import javafx.geometry.Point3D;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Box;
+import javafx.scene.shape.CullFace;
 import javafx.scene.shape.Shape3D;
 import model.elements.GameElement;
 import utility.geometry.geometry3d.*;
@@ -17,19 +20,21 @@ import utility.geometry.geometry3d.*;
 public class Player extends GameElement
 {
 	/** The starting position of the Player_1 object. */
-	public static final Point3D P1_START_POS = null;
+	public static final Point3D P1_START_POS = new Point3D(0,0,-500);
 	
 	/** The starting position of the Player_2 object. */
-	public static final Point3D P2_START_POS = null;
+	public static final Point3D P2_START_POS = new Point3D(0,0,500);
 	
 	/** The starting position of the CPU object. */
-	public static final Point3D CPU_START_POS = null;
+	public static final Point3D CPU_START_POS = P2_START_POS;
 	
 	/** The default starting score of all the players. */
 	public static final int START_SCORE = 0;
 	
 	/** The dimensions of the player. */
-	public static final Dimension3D PLAYER_DIMENSION = new Dimension3D(100.0, 100.0, 100.0);;
+	public static final Dimension3D PLAYER_DIMENSION = new Dimension3D(110.0, 80.0, 10.0);;
+	
+	private PhongMaterial material = new PhongMaterial(Color.GREEN);
 	
 	/**
 	 * The possible player ids.
@@ -67,6 +72,8 @@ public class Player extends GameElement
 		this.setId(id);
 		this.score = START_SCORE;
 		this.shape = new Box(PLAYER_DIMENSION.getWidth(), PLAYER_DIMENSION.getHeight(), PLAYER_DIMENSION.getDepth());
+		this.shape.setMaterial(material);
+		this.shape.setOpacity(0.2);
 		
 		getParent().getChildren().add(shape);
 	}
