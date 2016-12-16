@@ -9,6 +9,9 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import model.elements.gameelements.*;
+import view.gameelementsview.BallView;
+import view.gameelementsview.FieldView;
+import view.gameelementsview.GameElementView;
 import model.elements.GameElement;
 import controller.graphichandler.View;
 
@@ -18,14 +21,14 @@ public class GamePanel
 	private View view = new View(root);
 	private Scene scene = new Scene(root, Settings.FRAME_RESOLUTION.getWidth(), Settings.FRAME_RESOLUTION.getHeight(), true);
 	
-	private List<GameElement> players;
-	private Ball ball;
-	private Field field;
+	private List<GameElementView> players;
+	private BallView ball;
+	private FieldView field;
 	
 	/**
 	 * Create the panel.
 	 */
-	public GamePanel(List<GameElement> players, Field field, Ball ball) 
+	public GamePanel(List<GameElementView> players, FieldView field, BallView ball) 
 	{
 
 		this.players = players;
@@ -43,7 +46,7 @@ public class GamePanel
 		root.getChildren().add(field.getParent());
 		root.getChildren().add(ball.getParent());
 		
-		for(GameElement e : players)
+		for(GameElementView e : players)
 		{
 			root.getChildren().add(e.getParent());
 		}

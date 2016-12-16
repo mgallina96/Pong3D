@@ -19,6 +19,7 @@ import model.elements.GameElement;
 import model.elements.gameelements.Ball;
 import model.elements.gameelements.Field;
 import utility.graphics.GenericFXPanel;
+import view.gameelementsview.GameElementView;
 import view.gamepanel.GamePanel;
 
 /**
@@ -32,6 +33,7 @@ public class MenuController implements Initializable
 {		
 
 	private List<GameElement> players = new ArrayList<>();
+	private List<GameElementView> playersView = new ArrayList<>();
 	
 	@FXML private Button singlePlayer;
 	@FXML private Button multiplayer;
@@ -42,7 +44,7 @@ public class MenuController implements Initializable
 	{
 		singlePlayer.setOnAction(e -> { 
 			Main.LOG.log(Level.INFO, "Game Panel");
-			Main.setStartScene(new GameController(players).getPanel().getScene());
+			Main.setStartScene(new GameController(players, playersView).getPanel().getScene());
 	    });
 		
 		quit.setOnAction(e -> {

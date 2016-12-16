@@ -20,33 +20,11 @@ import model.elements.GameElement;
  */
 public class Field extends GameElement
 {
-	/* The dimensions of the field. */
-	private static final Dimension3D DIMENSION = new Dimension3D(400.0, 400.0, 1000.0);
-	
-	/* The field shape. */
-	private Shape3D shape = new Box(DIMENSION.getWidth(), DIMENSION.getHeight(), DIMENSION.getDepth());
-	
-	private PhongMaterial material = new PhongMaterial(Color.BLUEVIOLET);
-	
-	private AmbientLight centerLight = new AmbientLight();
-	
 	/**
 	 * Default constructor.
 	 */
 	public Field()
 	{
 		super(new Point3D(0,0,0));
-		
-		shape.setMaterial(material);
-		shape.setDrawMode(DrawMode.FILL);
-		shape.setCullFace(CullFace.FRONT);
-			
-		getParent().getChildren().addAll(shape, centerLight);
 	}
-
-	/** @return The size of the field. */
-	public Dimension3D getFieldSize() { return DIMENSION; }
-	
-	/** @return The shape of the field. */
-	public Shape3D getShape() { return shape; }
 }

@@ -12,7 +12,7 @@ import utility.graphics.graphicobject.Object3D;
 public class GameElement 
 {
 	private Point3D position;
-	private Object3D parent;
+
 
 	/**
 	 * Constructor for 3D elements.
@@ -23,8 +23,8 @@ public class GameElement
 	{
 		this.position = position;
 		
-		parent = new Object3D();
-		parent.setPosition(position.getX(), position.getY(), position.getZ());
+		/*parent = new Object3D();
+		parent.setPosition(position.getX(), position.getY(), position.getZ());*/
 	}
 	
 	/**
@@ -45,9 +45,4 @@ public class GameElement
 	/** @param position The position to set. */
 	public void setPosition(Point3D position) {	this.position = position; }
 	
-	/** @return The parent Transform. */
-	public Object3D getParent() { return parent; }
-
-	/** @param parent The parent Transform to set. */
-	public void setParent(Object3D parent) { this.parent = parent; }
 }

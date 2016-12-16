@@ -31,10 +31,6 @@ public class Player extends GameElement
 	/** The default starting score of all the players. */
 	public static final int START_SCORE = 0;
 	
-	/** The dimensions of the player. */
-	public static final Dimension3D PLAYER_DIMENSION = new Dimension3D(110.0, 80.0, 10.0);;
-	
-	private PhongMaterial material = new PhongMaterial(Color.GREEN);
 	
 	/**
 	 * The possible player ids.
@@ -58,7 +54,6 @@ public class Player extends GameElement
 	
 	private Id id;
 	private int score;
-	private Shape3D shape;
 	
 	/**
 	 * Default constructor.
@@ -71,11 +66,7 @@ public class Player extends GameElement
 		
 		this.setId(id);
 		this.score = START_SCORE;
-		this.shape = new Box(PLAYER_DIMENSION.getWidth(), PLAYER_DIMENSION.getHeight(), PLAYER_DIMENSION.getDepth());
-		this.shape.setMaterial(material);
-		this.shape.setOpacity(0.2);
-		
-		getParent().getChildren().add(shape);
+
 	}
 
 	/** @return The player Id. */
