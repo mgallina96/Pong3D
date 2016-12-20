@@ -32,7 +32,7 @@ public class Main extends Application
 		
 		try 
 		{
-			START_SCENE = new Scene(new GenericFXPanel("/view/startpanel/StartPanel.fxml").getRoot(), 
+			START_SCENE = new Scene(new GenericFXPanel("/view/startpanel/StartPanel.fxml").getRoot(),
 					Settings.FRAME_RESOLUTION.getWidth(), 
 					Settings.FRAME_RESOLUTION.getHeight()); 
 			

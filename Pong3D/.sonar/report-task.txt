@@ -1,5 +1,5 @@
 projectKey=Pong3D
 serverUrl=http://localhost:9000
 dashboardUrl=http://localhost:9000/dashboard/index/Pong3D
-ceTaskId=AVjQCmJ9xNPjdtSwgvl3
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AVjQCmJ9xNPjdtSwgvl3
+ceTaskId=AVkHlpVJkXGgweUR1Xf2
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVkHlpVJkXGgweUR1Xf2
