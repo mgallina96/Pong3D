@@ -1,5 +1,6 @@
 package view.gameelementsview;
 
+import javafx.geometry.Point3D;
 import utility.graphics.graphicobject.Object3D;
 
 public class GameElementView 
@@ -20,6 +21,11 @@ public class GameElementView
 	public void setParent(Object3D parent) 
 	{
 		this.parent = parent;
+	}
+	
+	public void setParentPosition(Point3D position)
+	{
+		this.parent.setPosition(position.getX(), position.getY(), position.getZ());
 	}
 
 }

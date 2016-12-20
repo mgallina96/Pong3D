@@ -8,7 +8,7 @@ import model.GameModel;
 import model.elements.gameelements.Ball;
 import model.elements.gameelements.Field;
 import model.elements.gameelements.Player;
-import model.elements.GameElement;
+
 import view.gameelementsview.BallView;
 import view.gameelementsview.FieldView;
 import view.gameelementsview.GameElementView;
@@ -26,29 +26,42 @@ public class GameController implements MouseMotionListener
 	private GameModel game;
 	private GamePanel panel;
 	
-	private List<GameElement> players;
-	private Ball ball = new Ball();
-	private Field field = new Field();
+	private List<Player> players;
+	private List<PlayerView> playersView;
+	private PlayerController player1= new PlayerController(PlayerController.Id.P1);
+	private PlayerController player2= new PlayerController(PlayerController.Id.P2);
+	private BallController ball = new BallController();
+	private FieldView field = new FieldView();
 	
-	private List<GameElementView> playersView;
-	private BallView ballView = new BallView();
-	private FieldView fieldView = new FieldView();
 		
 	/**
 	 * Default constructor
 	 * 
 	 * @param game The game played.
 	 */
-	public GameController(List<GameElement> players, List<GameElementView> playersView)
+	/*public GameController(List<PlayerController> playersController)
 	{
-		players.add(new Player(Player.Id.P1));
-		players.add(new Player(Player.Id.P2));
+		playersController.add(0, new PlayerController(PlayerController.Id.P1)); //caos, implementazione temporanea non funzionante
+		playersController.add(1, new PlayerController(PlayerController.Id.CPU));
 		
-		playersView.add(new PlayerView());
-		playersView.add(new PlayerView());
+		this.players.add(playersController.get(0).getPlayer());
+		this.players.add(playersController.get(1).getPlayer());
 		
-		this.game = new GameModel(players, field, ball);
-		this.panel = new GamePanel(playersView, fieldView, ballView);
+		this.playersView.add(playersController.get(0).getPlayerView());
+		this.playersView.add(playersController.get(1).getPlayerView());
+		
+		this.game = new GameModel(players, ball.getBall());
+		this.panel = new GamePanel(playersView, field, ball.getBallView()); 	
+	}*/
+	
+	public GameController()
+	{
+		players.add(player1.getPlayer());
+		players.add(player2.getPlayer());
+		playersView.add(player1.getPlayerView());
+		playersView.add(player1.getPlayerView());
+		this.game = new GameModel(players, ball.getBall());
+		this.panel = new GamePanel(playersView, field, ball.getBallView()); 
 	}
 	
 	/** @return The game. */

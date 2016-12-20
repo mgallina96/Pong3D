@@ -32,8 +32,7 @@ import view.gamepanel.GamePanel;
 public class MenuController implements Initializable 
 {		
 
-	private List<GameElement> players = new ArrayList<>();
-	private List<GameElementView> playersView = new ArrayList<>();
+	//private List<PlayerController> players = new ArrayList<>();
 	
 	@FXML private Button singlePlayer;
 	@FXML private Button multiplayer;
@@ -44,7 +43,7 @@ public class MenuController implements Initializable
 	{
 		singlePlayer.setOnAction(e -> { 
 			Main.LOG.log(Level.INFO, "Game Panel");
-			Main.setStartScene(new GameController(players, playersView).getPanel().getScene());
+			Main.setStartScene(new GameController(/*players*/).getPanel().getScene());
 	    });
 		
 		quit.setOnAction(e -> {

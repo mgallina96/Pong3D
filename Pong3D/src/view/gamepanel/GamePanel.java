@@ -12,6 +12,7 @@ import model.elements.gameelements.*;
 import view.gameelementsview.BallView;
 import view.gameelementsview.FieldView;
 import view.gameelementsview.GameElementView;
+import view.gameelementsview.PlayerView;
 import model.elements.GameElement;
 import controller.graphichandler.View;
 
@@ -21,14 +22,14 @@ public class GamePanel
 	private View view = new View(root);
 	private Scene scene = new Scene(root, Settings.FRAME_RESOLUTION.getWidth(), Settings.FRAME_RESOLUTION.getHeight(), true);
 	
-	private List<GameElementView> players;
+	private List<PlayerView> players;
 	private BallView ball;
 	private FieldView field;
 	
 	/**
 	 * Create the panel.
 	 */
-	public GamePanel(List<GameElementView> players, FieldView field, BallView ball) 
+	public GamePanel(List<PlayerView> players, FieldView field, BallView ball) 
 	{
 
 		this.players = players;
@@ -51,6 +52,7 @@ public class GamePanel
 			root.getChildren().add(e.getParent());
 		}
 	}
+	
 	
 	public Scene getScene() 
 	{
