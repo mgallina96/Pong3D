@@ -9,11 +9,13 @@ import javafx.scene.shape.DrawMode;
 import javafx.scene.shape.Shape3D;
 import utility.geometry.geometry3d.Dimension3D;
 /**
- * class for the graphic representation of the Field. 
+ * /**
+ * Class that represents the field's view
  * 
- * @author Filippini Giosuè
+ * @author Manuel Gallina
+ * @author Giosuè Filippini
  *
- */
+ */ 
 public class FieldView extends GameElementView
 {
 	/* The dimensions of the field. */
@@ -26,6 +28,9 @@ public class FieldView extends GameElementView
 	
 	private AmbientLight centerLight = new AmbientLight();
 	
+	/**
+	 * Default Constructor
+	 */
 	public FieldView()
 	{
 		super();

@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 import model.GameModel;
@@ -28,38 +29,32 @@ public class GameController implements MouseMotionListener
 	
 	private List<Player> players;
 	private List<PlayerView> playersView;
-	private PlayerController player1= new PlayerController(PlayerController.Id.P1);
-	private PlayerController player2= new PlayerController(PlayerController.Id.P2);
-	private BallController ball = new BallController();
-	private FieldView field = new FieldView();
+	private PlayerController player1;
+	private PlayerController player2;
+	private BallController ball;
+	private FieldView field;
 	
 		
 	/**
 	 * Default constructor
 	 * 
-	 * @param game The game played.
+	 * 
 	 */
-	/*public GameController(List<PlayerController> playersController)
-	{
-		playersController.add(0, new PlayerController(PlayerController.Id.P1)); //caos, implementazione temporanea non funzionante
-		playersController.add(1, new PlayerController(PlayerController.Id.CPU));
-		
-		this.players.add(playersController.get(0).getPlayer());
-		this.players.add(playersController.get(1).getPlayer());
-		
-		this.playersView.add(playersController.get(0).getPlayerView());
-		this.playersView.add(playersController.get(1).getPlayerView());
-		
-		this.game = new GameModel(players, ball.getBall());
-		this.panel = new GamePanel(playersView, field, ball.getBallView()); 	
-	}*/
-	
 	public GameController()
 	{
+		this.player1= new PlayerController(PlayerController.Id.P1);
+		this.player2= new PlayerController(PlayerController.Id.P2);
+		this.ball = new BallController();
+		this.field = new FieldView();
+		
+		this.players = new ArrayList<>();
 		players.add(player1.getPlayer());
 		players.add(player2.getPlayer());
+		
+		this.playersView = new ArrayList<>();
 		playersView.add(player1.getPlayerView());
-		playersView.add(player1.getPlayerView());
+		playersView.add(player2.getPlayerView());
+		
 		this.game = new GameModel(players, ball.getBall());
 		this.panel = new GamePanel(playersView, field, ball.getBallView()); 
 	}

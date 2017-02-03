@@ -6,8 +6,9 @@ import javafx.scene.shape.Box;
 import javafx.scene.shape.Shape3D;
 import utility.geometry.geometry3d.Dimension3D;
 /**
- * Class for the graphic representation of Player.
+ * Class that represents the view of a player
  * 
+ * @author Manuel Gallina
  * @author Giosuè Filippini
  *
  */
@@ -20,6 +21,9 @@ public class PlayerView extends GameElementView
 	
 	private Shape3D shape;
 	
+	/**
+	 * Default Constructor
+	 */
 	public PlayerView() 
 	{
 		super();

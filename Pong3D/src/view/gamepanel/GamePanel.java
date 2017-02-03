@@ -15,7 +15,13 @@ import view.gameelementsview.GameElementView;
 import view.gameelementsview.PlayerView;
 import model.elements.GameElement;
 import controller.graphichandler.View;
-
+/**
+ * Class that represents the panel of the game
+ * 
+ * @author Manuel Gallina
+ * @author Giosuè Filippini
+ *
+ */
 public class GamePanel
 {
 	private Group root = new Group();
@@ -39,7 +45,9 @@ public class GamePanel
 		
 		createScene();
 	}
-	
+	/**
+	 * Create the scene: set color, camera and add the game element.
+	 */
 	private void createScene() 
 	{
 		scene.setFill(Color.CORAL);
@@ -51,9 +59,13 @@ public class GamePanel
 		{
 			root.getChildren().add(e.getParent());
 		}
+		
 	}
 	
-	
+	/**
+	 * 
+	 * @return the scene
+	 */
 	public Scene getScene() 
 	{
 		return this.scene;
