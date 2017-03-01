@@ -4,6 +4,7 @@ import java.net.URL;
 
 import com.interactivemesh.jfx.importer.obj.ObjModelImporter;
 
+import javafx.geometry.Point3D;
 import javafx.scene.Group;
 import javafx.scene.shape.MeshView;
 import javafx.scene.transform.Scale;
@@ -47,7 +48,7 @@ public class Object3D extends Group implements Transform, ObjImporter
     public Scale getScale() { return this.scale; }
     
     /**
-     * Sets the translation from the three axis.
+     * Sets the translation from the three axes.
      * 
      * @param x The translation from the x axis.
      * @param y The translation from the y axis.
@@ -61,7 +62,19 @@ public class Object3D extends Group implements Transform, ObjImporter
     }
 
     /**
-     * Sets the translation from the x and y axis.
+     * Sets the position to a 3D point.
+     * 
+     * @param point The 3D point.
+     */
+    public void setPosition(Point3D point)
+    {
+    	position.setX(point.getX());
+    	position.setY(point.getY());
+    	position.setZ(point.getZ());
+    }
+    
+    /**
+     * Sets the translation from the x and y axes.
      * 
      * @param x The translation from the x axis.
      * @param y The translation from the y axis.
@@ -73,7 +86,7 @@ public class Object3D extends Group implements Transform, ObjImporter
     }
 
     /**
-     * Sets the rotation around the three axis.
+     * Sets the rotation around the three axes.
      * 
      * @param x The rotation around the x axis.
      * @param y The rotation around the y axis.
@@ -85,7 +98,7 @@ public class Object3D extends Group implements Transform, ObjImporter
     }
     
     /**
-     * Sets the scale factor for the three axis.
+     * Sets the scale factor for the three axes.
      * 
      * @param scaleFactor The scale factor.
      */
@@ -96,9 +109,8 @@ public class Object3D extends Group implements Transform, ObjImporter
         scale.setZ(scaleFactor);
     }
 
-    
     /**
-     * Sets the scale for the three axis.
+     * Sets the scale for the three axes.
      * 
      * @param x The scale for the x axis.
      * @param y The scale for the y axis.
@@ -112,7 +124,7 @@ public class Object3D extends Group implements Transform, ObjImporter
     }
 
     /**
-     * Resets the position to the origin of the axis, the rotation parallel to the axis 
+     * Resets the position to the origin of the axes, the rotation parallel to the axes 
      * and the scale to the unitary values.
      */
     public void reset() 
@@ -164,7 +176,7 @@ public class Object3D extends Group implements Transform, ObjImporter
 	}
 
     /**
-     * Returns the string representation of this transform.
+     * Returns the string representation of this Object3D.
      */
     @Override 
     public String toString() 

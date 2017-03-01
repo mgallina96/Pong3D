@@ -19,8 +19,8 @@ public class Geometry3D
 	 * @return The distance between A and B.
 	 */
 	public static double distance3D(Point3D a, Point3D b) {
-		return (Math.sqrt((a.getX() - b.getX()) * (a.getX() - b.getX()) + 
+		return Math.sqrt((a.getX() - b.getX()) * (a.getX() - b.getX()) + 
 						  (a.getY() - b.getY()) * (a.getY() - b.getY()) +
-						  (a.getZ() - b.getZ()) * (a.getZ() - b.getZ())));
+						  (a.getZ() - b.getZ()) * (a.getZ() - b.getZ()));
 	}
 }

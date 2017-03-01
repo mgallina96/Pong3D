@@ -9,6 +9,7 @@ import javafx.scene.shape.MeshView;
  * 
  * @author Manuel Gallina
  */
+@FunctionalInterface
 public interface ObjImporter 
 {	
 	/**

@@ -1,4 +1,4 @@
-package controller.graphichandler;
+package view;
 
 import javafx.scene.Group;
 import javafx.scene.PerspectiveCamera;
@@ -12,9 +12,8 @@ import utility.graphics.graphicobject.Object3D;
  */
 public class View 
 {
-	private static final double CAMERA_NEAR_CLIP = 0.1;
+	private static final double CAMERA_NEAR_CLIP = 10;
 	private static final double CAMERA_FAR_CLIP = 10000.0;
-	private static final double CAMERA_INITIAL_DISTANCE = 5000;
 	
 	private static final double CAMERA_INITIAL_Y_ANGLE = 0.0;
 	private static final double CAMERA_INITIAL_X_ANGLE = 0.0;
@@ -45,7 +44,7 @@ public class View
 	 */
 	public View(Group parent) 
 	{
-		camera.setFieldOfView(50.0);
+		camera.setFieldOfView(90.0);
         
         parent.getChildren().add(pivot);
         pivot.getChildren().add(pivot2);
@@ -83,7 +82,7 @@ public class View
        
         pivot.getPosition().setX(0.0);
         pivot.getPosition().setY(0.0);
-        pivot.getPosition().setZ(-935.0);
+        pivot.getPosition().setZ(-600.0);
 	}
 	
 	/**

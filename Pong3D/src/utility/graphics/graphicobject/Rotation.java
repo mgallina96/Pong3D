@@ -4,11 +4,11 @@ import javafx.scene.transform.Rotate;
 
 /**
  * This class represents a rotation in the 3D space. 
+ * 
  * More precisely the 3 different rotations around the X, Y, Z axes, expressed in degrees.
  * 
  * @author Michele Franceschetti
  */
-
 public class Rotation 
 {
 	private Rotate x = new Rotate();
@@ -29,35 +29,14 @@ public class Rotation
     	setRotation(0,0,0);
     }
     
-    /** 
-     * Returns the Rotate object for the X axis.
-     * 
-     * @return The Rotate object for the X axis.
-     */
-    public Rotate getRotateX()
-    {
-    	return this.x;
-    }
+    /** @return The Rotate object for the X axis. */
+    public Rotate getRotateX() { return this.x; }
     
-    /** 
-     * Returns the Rotate object for the Y axis.
-     * 
-     * @return The Rotate object for the Y axis.
-     */
-    public Rotate getRotateY()
-    {
-    	return this.y;
-    }
+    /** @return The Rotate object for the Y axis. */
+    public Rotate getRotateY() { return this.y; }
     
-    /** 
-     * Returns the Rotate object for the Z axis.
-     * 
-     * @return The Rotate object for the Z axis.
-     */
-    public Rotate getRotateZ()
-    {
-    	return this.z;
-    }
+    /** @return The Rotate object for the Z axis. */
+    public Rotate getRotateZ() { return this.z; }
     
     /**
      * Sets the rotation of the transform around the three axis.
@@ -73,65 +52,23 @@ public class Rotation
         this.z.setAngle(z);
     }
     
-    /**
-     * Sets the rotation around the x axis.
-     * 
-     * @param x The rotation around the x axis.
-     */
-    public void setX(double x) 
-    { 
-    	this.x.setAngle(x); 
-    }
+    /** @param x The rotation around the x axis. */
+    public void setX(double x) { this.x.setAngle(x); }
     
-    /**
-     * Sets the rotation around the y axis.
-     * 
-     * @param y The rotation around the y axis.
-     */
-    public void setY(double y) 
-    { 
-    	this.y.setAngle(y); 
-    }
+    /** @param y The rotation around the y axis. */
+    public void setY(double y) { this.y.setAngle(y); }
     
-    /**
-     * Sets the rotation around the z axis.
-     * 
-     * @param z The rotation around the z axis.
-     */
-    public void setZ(double z) 
-    { 
-    	this.z.setAngle(z); 
-    }
+    /** @param z The rotation around the z axis. */
+    public void setZ(double z) { this.z.setAngle(z); }
     
-    /**
-     * Gets the rotation around the x axis.
-     * 
-     * @return The rotation around the x axis.
-     */
-    public double getX() 
-    {
-    	return this.x.getAngle();
-    }
+    /** @return The rotation around the x axis. */
+    public double getX() { return this.x.getAngle(); }
     
-    /**
-     * Gets the rotation around the y axis.
-     * 
-     * @return The rotation around the y axis.
-     */
-    public double getY() 
-    {
-    	return this.y.getAngle(); 
-    }
+    /** @return The rotation around the y axis. */
+    public double getY() { return this.y.getAngle(); }
     
-    /**
-     * Gets the rotation around the z axis.
-     * 
-     * @return The rotation around the z axis.
-     */
-    public double getZ()
-    { 
-    	return this.z.getAngle(); 
-    }
+    /** @return The rotation around the z axis. */
+    public double getZ() { return this.z.getAngle(); }
 
     /**
      * Returns a string representation of the rotation.

@@ -5,8 +5,7 @@ package utility.graphics.graphicobject;
  * 
  * @author Michele Franceschetti
  */
-
-public interface Transform //extends Group
+public interface Transform
 {
 	/**
      * Sets the translation from the three axis.

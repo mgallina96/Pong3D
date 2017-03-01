@@ -1,17 +1,19 @@
 package application;
 
-import java.awt.Dimension;
+import javafx.geometry.Dimension2D;
 
 /**
- * A {@code static} class with a list of {@code public} constants for the project.
+ * Settings.
+ * 
+ * This class should contain all those constants that are useful all trough the application. 
  * 
  * @author Manuel Gallina
- * @author Giosuè Filippini
  */
-public class Settings 
+public final class Settings 
 {
-	/** The dimensions of the window. */
-	public static Dimension FRAME_RESOLUTION = new Dimension(1600, 900);
+	/** The window resolution. */
+	public static final Dimension2D RESOLUTION = new Dimension2D(1600, 900);
 	
-	private Settings(){}
+	/* Constructor. */
+	private Settings() {}
 }
